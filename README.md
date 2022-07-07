@@ -1,2 +1,4 @@
-# git_demo
-demo all of git features in this repo
+
+This is the repo for learning to use Github
+
+There is a really great template in this repo.
