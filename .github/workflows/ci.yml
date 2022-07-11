@@ -48,7 +48,7 @@ jobs:
         run: ls
 
 
-  display:
+  new-display:
     runs-on: ubuntu-latest
 
     steps:
