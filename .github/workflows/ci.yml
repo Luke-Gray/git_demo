@@ -22,7 +22,7 @@ jobs:
           python-version: '3.8'
 
       - name: Run Python Script
-      - run: python create_file.py
+        run: python create_file.py
 
       - name: List all ADDED files
         run: ls
