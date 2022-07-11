@@ -22,6 +22,10 @@ jobs:
           echo "The platform is ${{ env.platform }}" 
           echo "The region is $region"
   
+      - name: Display GH Default env variables #exploring default GH variables
+        run: |
+          echo "Github Actor: $GITHUB_ACTOR"
+          echo "Github Ref: $GITHUB_REF"
 
   build:
     runs-on: ubuntu-latest
