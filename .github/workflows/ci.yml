@@ -48,8 +48,7 @@ jobs:
         run: ls
 
 
-jobs:
-  build:
+  display:
     runs-on: ubuntu-latest
 
     steps:
