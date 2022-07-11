@@ -22,7 +22,7 @@ jobs:
     - name: Run python script
       id: contents
       run: |
-       python create_file.py #runs this py file
+       python create_txt_file.py #runs this py file
        contents=$( cat readme.txt ) #cat reads content of that txt file
        echo "::set-output name = data::$contents" #sets output (output1) with contents of file
 
