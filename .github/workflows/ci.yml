@@ -51,7 +51,7 @@ jobs:
   new-display:
     runs-on: ubuntu-latest
     needs: [display, build] #creates a dependency so this only runs after the other two jobs have ran
-    if: always() #even though dependent, this statement allows job to run even if dependent jobs fail
+    if: ${{ always(build) }} #even though dependent, this statement allows job to run even if dependent jobs fail
     steps:
       - name: print a value
         run: echo "Hello from another job"
