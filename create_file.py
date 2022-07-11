@@ -1,2 +1,2 @@
-with open('read_me.txt', 'w') as f:
+with open('readme.txt', 'w') as f:
     f.write('Create a new text file!')
