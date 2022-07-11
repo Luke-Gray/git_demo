@@ -36,17 +36,22 @@ jobs:
       - name: List all ORIGINAL files
         run: ls
 
-      - name: Install Python
+      - name: Install Python #Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
-      - name: Run Python Script
+      - name: Run Python Script #Creates a new file
         run: python create_file.py
 
-      - name: List all ADDED files
+      - name: List all ADDED files #lists all added files
         run: ls
 
-#Install Python
-#Create a new file
-#List all files again
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print a value
+        run: echo "Hello from another job"
