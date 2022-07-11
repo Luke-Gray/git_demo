@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Display custom environmental variables
-        if: ${{ env.platform == 'west'}} #must use this if want to run outside a run comman (e.g. in 'if' statement)
+        if: ${{ env.platform == 'Azure'}} #must use this if want to run outside a run comman (e.g. in 'if' statement)
         #can use $region format only if it is a run command like below
         run: |
           echo "The platform is ${{ env.platform }}" 
