@@ -29,6 +29,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: display
+    if: always() #even though dependent, this statement allows job to run even if dependent jobs fail
 
     steps:
       - uses: actions/checkout@v3
@@ -51,7 +53,7 @@ jobs:
   new-display:
     runs-on: ubuntu-latest
     needs: [display, build] #creates a dependency so this only runs after the other two jobs have ran
-    if: ${{ always() && needs.build.result=='failure'}} #even though dependent, this statement allows job to run even if dependent jobs fail
+    if: ${{ always() && needs.display.result=='failure'}} #still runs only if build fails, won't work if display fails
     steps:
       - name: print a value
         run: echo "Hello from another job"
