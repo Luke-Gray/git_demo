@@ -1,0 +1,34 @@
+name: outputs_demo_2
+
+on:
+  workflow_dispatch:
+  
+jobs:
+ job1:
+  runs-on: ubuntu-latest
+  
+  outputs:
+    output1: ${{ steps.contents.outputs.data }}
+
+  steps:
+    - name: Checkout branch
+      uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+       python-version: '3.9'
+
+    - name: Run python script
+      id: contents
+      run: |
+       python create_txt_file.py #runs this py file
+       contents=$( cat readme.txt ) #cat reads content of that txt file
+       echo "::set-output name = data::$contents" #sets output (output1) with contents of file
+
+ job2:
+  runs-on: ubuntu-latest
+  needs: job1
+  steps:
+    - run: echo "${{ needs.job1.outputs.output1 }}"
+
