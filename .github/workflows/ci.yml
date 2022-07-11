@@ -50,6 +50,7 @@ jobs:
 
   new-display:
     runs-on: ubuntu-latest
+    needs: [display, build] #creates a dependency so this only runs after the other two jobs have ran
 
     steps:
       - name: print a value
