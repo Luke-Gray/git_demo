@@ -24,7 +24,7 @@ jobs:
       run: |
        python create_file.py #runs this py file
        contents=$( cat readme.txt ) #cat reads content of that txt file
-       echo "::set-output name = data::$contents" #sets output (output1) with contents of file
+       echo "::set-output name = data::$contents" 
 
  job2:
   runs-on: ubuntu-latest
