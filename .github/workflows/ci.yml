@@ -42,7 +42,7 @@ jobs:
           python-version: '3.8'
 
       - name: Run Python Script #Creates a new file
-        run: python create_file.py
+        run: python create_file_2.py
 
       - name: List all ADDED files #lists all added files
         run: ls
@@ -51,7 +51,7 @@ jobs:
   new-display:
     runs-on: ubuntu-latest
     needs: [display, build] #creates a dependency so this only runs after the other two jobs have ran
-
+    if: always() #even though dependent, this statement allows job to run even if dependent jobs fail
     steps:
       - name: print a value
         run: echo "Hello from another job"
